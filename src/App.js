@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {associate, hashIt, toEdn} from "replikativ";
+import {ORMap, hashIt, toEdn} from "replikativ";
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,7 +13,7 @@ class App extends Component {
     const tx = {description, value, date: new Date()}
     const {ormapId, userId, stage} = this.props.replica
     const hashed = hashIt(toEdn(tx))
-    associate(stage, userId, ormapId, hashed , [["add", tx]]).then(function() {
+    ORMap.associate(stage, userId, ormapId, hashed , [["add", tx]]).then(function() {
       console.log("associated with " + JSON.stringify(tx));
     }, console.error);
   }
@@ -27,7 +27,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={(e) => {this.addTransaction({foo: "bar"})}}>Replicate!</button>
+            <button onClick={(e) => {this.addTransaction({description: "bar", value: 123, type: "boo"})}}>Replicate!</button>
+            {this.props.replica.atom.transactions.map(entry => <p>{entry.description}</p>)}
       </div>
     );
   }

@@ -9,12 +9,12 @@ const userId = "mail:alice@stechuhr.de";
 const ormapId = "07f6aae2-2b46-4e44-bfd8-058d13977a8a";
 const uri = "ws://localhost:31778";
 const evalFunctions = {"add": function(supervisor, old, params) {
-  const transactions = old.transactions;
+  let transactions = old.transactions;
   transactions.push(params);
   return {transactions};
 }}
 
-ReactDOM.render(<ORMapReplikator userId={userId} ormapId={ormapId} evalFunctions={evalFunctions} uri={uri}><App/></ORMapReplikator>,
+ReactDOM.render(<ORMapReplikator atom={{transactions: []}} userId={userId} ormapId={ormapId} evalFunctions={evalFunctions} uri={uri}><App/></ORMapReplikator>,
                 document.getElementById('root'));
 
 registerServiceWorker();

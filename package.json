@@ -6,7 +6,7 @@
     "dependencies": {
         "react": "^15.6.1",
         "react-dom": "^15.6.1",
-        "replikativ": "file:///Users/konny/projects/replikativ/npm",
+        "replikativ": "file:///home/konny/projects/replikativ/npm",
         "websocket": "^1.0.24"
     },
     "devDependencies": {
