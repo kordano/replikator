@@ -27,8 +27,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-            <button onClick={(e) => {this.addTransaction({description: "bar", value: 123, type: "boo"})}}>Replicate!</button>
-            {this.props.replica.atom.transactions.map(entry => <p>{entry.description}</p>)}
+            <button onClick={(e) => {this.addTransaction({description: "awesome", value: 123, type: "tothemax"})}}>Replicate!</button>
+            {this.props.replica.atom.transactions.map(entry => <p>{entry.description + " : " + entry.date.toLocaleString()}</p>)}
       </div>
     );
   }
