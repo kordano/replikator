@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ORMap, hashIt, toEdn} from "replikativ";
+import {LWWR} from "replikativ";
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,14 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.addTransaction = this.addTransaction.bind(this);
+    this.increaseCounter = this.increaseCounter.bind(this);
   }
-  addTransaction({description, value, type}) {
-    const tx = {description, value, date: new Date()}
-    const {ormapId, userId, stage} = this.props.replica
-    const hashed = hashIt(toEdn(tx))
-    ORMap.associate(stage, userId, ormapId, hashed , [["add", tx]]).then(function() {
-      console.log("associated with " + JSON.stringify(tx));
+  increaseCounter() {
+    const {lwwrId, userId, stage, atom} = this.props.replica;
+    LWWR.setRegister(stage, userId, lwwrId, atom + 1).then(function() {
+      console.info("Counter increased!");
     }, console.error);
   }
   render() {
@@ -27,8 +25,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-            <button onClick={(e) => {this.addTransaction({description: "awesome", value: 123, type: "tothemax"})}}>Replicate!</button>
-            {this.props.replica.atom.transactions.map(entry => <p>{entry.description + " : " + entry.date.toLocaleString()}</p>)}
+        <button onClick={(e) => {this.increaseCounter}}>Replicate!</button>
+        <p>{this.props.replica.atom}</p>
       </div>
     );
   }

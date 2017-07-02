@@ -1,20 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import ORMapReplikator from "./node_modules/components/ORMapReplikator/ORMapReplikator.js";
+import {LwwrReplikator} from "./node_modules/components/Replikator";
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 const userId = "mail:alice@stechuhr.de";
-const ormapId = "07f6aae2-2b46-4e44-bfd8-058d13977a8a";
+const lwwrId = "07f6aae2-2b46-4e44-bfd8-058d13977a8a"; // UUID as string
 const uri = "ws://localhost:31778";
-const evalFunctions = {"add": function(supervisor, old, params) {
-  let transactions = old.transactions;
-  transactions.push(params);
-  return {transactions};
-}}
 
-ReactDOM.render(<ORMapReplikator atom={{transactions: []}} userId={userId} ormapId={ormapId} evalFunctions={evalFunctions} uri={uri}><App/></ORMapReplikator>,
+ReactDOM.render(<LwwrReplikator atom={0} userId={userId} crdtId={lwwrId} uri={uri}><App/></LwwrReplikator>,
                 document.getElementById('root'));
 
 registerServiceWorker();
