@@ -6,7 +6,7 @@ Replikator enables modern state synchronisation for [react](https://facebook.git
 
 ## Installation
 
-Assuming you are using (npm)[https://www.npmjs.com] as package manager, you may install the latest version via:
+Assuming you are using [npm](https://www.npmjs.com) as package manager, you may install the latest version via:
 
 ```
 npm install --save replikator
