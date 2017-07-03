@@ -11,8 +11,10 @@ class App extends Component {
   }
   increaseCounter() {
     const {lwwrId, userId, stage, atom} = this.props.replica;
-    LWWR.setRegister(stage, userId, lwwrId, atom + 1).then(function() {
+    const {counter} = atom
+    LWWR.setRegister(stage, userId, lwwrId, {counter: (counter + 1)}).then(function() {
       console.info("Counter increased!");
+      console.log(counter);
     }, console.error);
   }
   render() {
@@ -25,8 +27,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={(e) => {this.increaseCounter}}>Replicate!</button>
-        <p>{this.props.replica.atom}</p>
+        <button onClick={(e) => {this.increaseCounter()}}>Replicate!</button>
+        <p>{JSON.stringify(this.props.replica.atom)}</p>
       </div>
     );
   }
