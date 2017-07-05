@@ -1,12 +1,12 @@
 {
   "name": "replikator",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "main": "lib/index.js",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "replikativ": "file:///Users/konny/projects/replikativ/npm",
+    "replikativ": "0.2.7",
     "websocket": "^1.0.24"
   },
   "devDependencies": {
