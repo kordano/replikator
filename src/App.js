@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {LWWR} from "replikativ";
+import {setLWWR} from "replikativ";
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,11 +10,11 @@ class App extends Component {
     this.increaseCounter = this.increaseCounter.bind(this);
   }
   increaseCounter() {
-    const {lwwrId, userId, stage, atom} = this.props.replica;
-    const {counter} = atom
-    LWWR.setRegister(stage, userId, lwwrId, {counter: (counter + 1)}).then(function() {
+    const atom = this.props.atom;
+    const {lwwrId, userId, stage} = this.props.replica;
+    console.log("Current: " + atom);
+    setLWWR(stage, userId, lwwrId, atom + 1).then(function() {
       console.info("Counter increased!");
-      console.log(counter);
     }, console.error);
   }
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={(e) => {this.increaseCounter()}}>Replicate!</button>
-        <p>{JSON.stringify(this.props.replica.atom)}</p>
+        <p>{JSON.stringify(this.props.atom)}</p>
       </div>
     );
   }
