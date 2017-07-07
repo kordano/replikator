@@ -1,7 +1,7 @@
 # replikator
 Replikator enables modern state synchronisation for [react](https://facebook.github.io/react) via [replikativ](http://replikativ.io).
 
-# Quickstart
+## Quickstart
 
 
 ## Installation
@@ -14,6 +14,7 @@ npm install --save replikator
 
 # Documentation
 
+- basic components: [Components](https://github.com/kordano/replikator/blob/master/doc/api.md)
 
 # License
 
