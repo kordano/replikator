@@ -2,7 +2,7 @@
   "name": "replikator",
   "version": "0.0.4",
   "private": false,
-  "main": "lib/index.js",
+  "main": "lib/components/Replikator/index.js",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
