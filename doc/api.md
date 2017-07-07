@@ -19,7 +19,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {LwwrReplikator} from "Replikator";
 
-const userId = "mail:alice@stechuhr.de";
+const userId = "mail:alice@replikativ.io";
 const lwwrId = "07f6aae2-2b46-4e44-bfd8-058d13977a8a"; // UUID as string
 const uri = "ws://localhost:31778";
 const lwwrReplikator = <LwwrReplikator 
@@ -52,7 +52,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {ORMapReplikator} from "Replikator";
 
-const userId = "mail:alice@stechuhr.de";
+const userId = "mail:alice@replikativ.io";
 const lwwrId = "07f6aae2-2b46-4e44-bfd8-058d13977a8a"; // UUID as string
 const uri = "ws://localhost:31778";
 const evalFunctions = {"add": function(supervisor, old, params) {
