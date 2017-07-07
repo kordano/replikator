@@ -1,7 +1,6 @@
 /node_modules
 /coverage
 /build
-/lib
 /dist
 
 .DS_Store
