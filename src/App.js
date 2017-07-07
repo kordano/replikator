@@ -28,7 +28,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <button onClick={(e) => {this.increaseCounter()}}>Replicate!</button>
-        <p>{JSON.stringify(this.props.atom)}</p>
+        <p>{JSON.stringify(this.props.atom || 0)}</p>
       </div>
     );
   }

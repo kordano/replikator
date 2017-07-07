@@ -1,13 +1,13 @@
 {
   "name": "replikator",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "main": "lib/components/Replikator/index.js",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
       "replikativ": "0.2.7",
-      "replikator": "0.0.3",
+      "replikator": "0.0.6",
     "websocket": "^1.0.24"
   },
   "devDependencies": {

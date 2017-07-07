@@ -12,6 +12,18 @@ Assuming you are using [npm](https://www.npmjs.com) as package manager, you may 
 npm install --save replikator
 ```
 
+## Demo
+
+You may see a working demo by starting a react app:
+
+```
+cd node_modules/replikator
+npm install
+npm start
+```
+
+You will be redirected to our demo page.
+
 # Documentation
 
 - basic components: [Components](https://github.com/kordano/replikator/blob/master/doc/api.md)
