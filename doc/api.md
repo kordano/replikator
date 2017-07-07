@@ -46,6 +46,7 @@ React Component using Observed Remove Map as replication data type.
 - `evalFunctions`: evalution function object, containing id and function that can be applied to local ormap
 
 ### Example
+```
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -69,3 +70,4 @@ const ormapReplikator = <ORMapReplikator
                        </ORMapReplikator>
 
 ReactDOM.render(ORMapReplikator, document.getElementById('root'));
+```
